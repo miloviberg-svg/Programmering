@@ -1,0 +1,58 @@
+
+saldo = 0
+historik = []
+
+while True:
+    print("Vad vill du göra?")
+    print("1. Visa saldo")
+    print("2. Lägg in pengar")
+    print("3. Ta ut pengar")
+    print("4. Visa historik")
+    print("5. Avsluta programmet")
+
+    val = input("Ange ett nummer (1-5): ")
+
+    if val == "1":
+        print(f"Ditt saldo är: {saldo} kr")
+
+    elif val == "2":
+        try:
+            belopp = float(input("Hur mycket vill du sätta in? "))
+            if belopp > 0:
+                saldo += belopp
+                historik.append(f"Satte in {belopp} kr. Nytt saldo: {saldo} kr")
+                print(f"{belopp} kr har satts in.")
+            else:
+                print("Du måste ange ett positivt belopp.")
+        except ValueError:
+            print("Ogiltig inmatning. Ange ett tal.")
+
+    elif val == "3":
+        try:
+            belopp = float(input("Hur mycket vill du ta ut? "))
+            if belopp > 0:
+                if belopp <= saldo:
+                    saldo -= belopp
+                    historik.append(f"Tog ut {belopp} kr. Nytt saldo: {saldo} kr")
+                    print(f"{belopp} kr har tagits ut.")
+                else:
+                    print("Det finns inte tillräckligt med pengar på kontot.")
+            else:
+                print("Du måste ange ett positivt belopp.")
+        except ValueError:
+            print("Ogiltig inmatning. Ange ett tal.")
+
+    elif val == "4":
+        print("\nTransaktionshistorik:")
+        if historik:
+            for transaktion in historik:
+                print(transaktion)
+        else:
+            print("Ingen historik ännu.")
+
+    elif val == "5":
+        print("Programmet avslutas. Hej då!")
+        break
+
+    else:
+        print("Ogiltigt val. Försök igen.")

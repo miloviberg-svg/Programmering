@@ -11,4 +11,4 @@ age = int(age)
 
 print ("wow u're ancient", name, "u're", age, "years old")
 
-prin("in then years u are", age + 10)
+print ("in then years u are", age + 10 , "practical dead")

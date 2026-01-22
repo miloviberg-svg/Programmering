@@ -1,0 +1,8 @@
+
+Användaren matar in ålder
+
+Om ålder är 18 eller mer
+    Du är myndig!
+
+Om inte
+    Du är inte myndig
