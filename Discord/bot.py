@@ -92,15 +92,14 @@ async def ban(ctx, member: discord.Member, *, reason=None): #osäker varför man
 @bot.command()
 async def palindrom(ctx, text : str):
     try:
-        bloody_text_1 = text
         bloody_text_2 = ''
         for char in text:
             bloody_text_2 = char + bloody_text_2
-        if bloody_text_2 == bloody_text_1:    
+        if bloody_text_2 == text:    
             await ctx.send("Yes!")
         else:
                 await ctx.send("No")
     except ValueError:
         await ctx.send("hur")
 
-bot.run('MTQ4MTU3MDMzODQxMTM4MDc3Nw.GDhwUW.jqpgHDQEUVb4qQCWKnfU7ijtZIw6Y-oWwymHKs')
+bot.run('')
